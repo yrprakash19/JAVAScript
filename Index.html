@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First JavaScript code!!!</title>
+    <script type="text/javascript">
+    //alert("Hello World!");
+	var one = 22;
+var two = 3;
+var add = one + two;
+var minus = one - two;
+var multiply = one * two;
+var divide = one/two;
+	document.write("First No: = " + one + "<br />Second No: = " + two + " <br />");
+	document.write(one + " + " + two + " = " + add + "<br/>");
+	document.write(one + " - " + two + " = " + minus + "<br/>");
+	document.write(one + " * " + two + " = " + multiply + "<br/>");
+	document.write(one + " / " + two + " = " + divide + "<br/>");
+
+	var students = new Array("John", "Ann", "Aaron", "Edwin", "Elizabeth");
+		Array.prototype.displayItems=function(){
+			for (i=0;i<this.length;i++){
+				document.write(this[i] + "<br />");
+			}
+		}	
+
+		document.write("students array<br />");
+		//students.displayItems();
+		document.write("<br />The number of items in students array is " + students.length + "<br />");
+		document.write("<br />The SORTED students array<br />");
+		students.sort();
+		//students.displayItems();
+		document.write("<br />The REVERSED students array<br />");
+		students.reverse();
+		//students.displayItems();
+		document.write("<br />THE students array after REMOVING the LAST item<br />");
+		students.pop();
+		//students.displayItems();
+        document.write("<br />THE students array after PUSH<br />");
+        students.push("New Stuff");
+		//students.displayItems();
+        document.write("<br />THE students array after SHIFT<br />");
+        students.shift();
+        document.write("After shift the Array length :"+students.length+"<br/>")
+        document.write("After shift the Array First element :"+students[0]+"<br/>")
+        document.write("After shift the Array Last element :"+students[students.length-1]+"<br/>")
+        ///students.displayItems();
+
+function calcAge(birthYear){
+	return 2020-birthYear;
+	}
+ var jhonAge= calcAge(1992);
+ 
+ document.write("<br/> Jhon Age is:"+jhonAge+"<br/>");
+
+ 
+
+ function addition(first, second)
+	{
+	  var sum = first + second;
+	  return sum;
+	}
+
+      var firstNo = 78;
+      var secondNo = 22;
+	  document.write(firstNo + " + " + secondNo + " = " + addition(firstNo,secondNo)+"<br/>");
+	  
+   var snith = {
+	firstName :'snith',
+	lastName:'smith',
+	family : ['jame','miller','mark','Bob','Emily'],
+	job: 'teacher',
+	birthYear:1990,
+	 calcAge:function(){
+		this.age = 2020-this.birthYear;
+		}
+		
+   };
+	document.write(snith.firstName+'<br/>');
+	document.write(snith.family+'<br/>');
+	var x ='lastName';
+	document.write(snith[x]+'<br/>');   
+	document.write(snith.family[2]+'<br/>');
+	snith.age = 15;
+	document.write(snith.age+'<br/>');
+	snith.calcAge();
+	document.write(snith.age+'<br/>');
+
+	var mark = {
+	firstName :'mark',
+	mass: 95,
+	height : 1.92,
+	 calcBMI:function(){
+		this.bmi = this.mass/(this.height*this.height);
+		return this.bmi;
+		}	
+   };
+
+   var jhon = {
+	firstName :'jhon',
+	mass: 85,
+	height : 1.72,
+	 calcBMI:function(){
+		this.bmi = this.mass/(this.height*this.height);
+		return this.bmi;
+		}	
+   };
+
+if(jhon.calcBMI()>mark.calcBMI())
+{
+	document.write(jhon.firstName+" BMI is greator :"+jhon.bmi+'<br/>');
+}
+else if(mark.bmi>jhon.bmi)
+{
+	document.write(mark.firstName+" BMI is greator :"+mark.bmi+'<br/>');
+}
+else
+{
+	document.write("Both BMI are equal"+'<br/>');
+}
+
+var jhonFamily = ['jame','miller',1992,'mark',true,'Bob',2015,'Emily'];
+
+for (var i=0;i<jhonFamily.length;i++)
+{
+	document.write(jhonFamily[i]+'<br/>');
+}
+
+for (var i=0;i<jhonFamily.length;i++)
+{
+	if(typeof jhonFamily[i]!=='string')continue;
+	document.write(jhonFamily[i]+'<br/>');
+}
+
+for (var i=0;i<jhonFamily.length;i++)
+{
+	if(typeof jhonFamily[i]!=='string')
+	document.write(jhonFamily[i]+'<br/>');
+}
+
+var Prk = {
+            fullName: 'Prakash',
+            bills: [124, 48, 268, 188, 42],
+            calcTips:function () {
+				this.tips = [];
+				this.finalValue= [];
+				for(var i=0;i<this.bills.length;i++)
+				{
+				var percent;
+				var bill = this.bills[i];
+				if(bill<50)
+				{
+					percent=.2;
+				}
+				else if(bill>=50 && bill<200)
+				{
+					percent=.15;
+				}
+				else
+				{
+					percent=.1;
+				}
+				this.tips[i]=bill*percent;
+				this.finalValue[i]=bill+bill*percent;
+				}
+               //return 0; 
+            }
+        };
+
+        Prk.calcTips();
+		document.write(Prk.fullName+'<br/>');
+		for(var i =0;i<Prk.bills.length;i++)
+		{
+			document.write("Bill amount:"+Prk.bills[i]+" and Tip is:"+Prk.tips[i]+" Final Value"+Prk.finalValue[i]+'<br/>');
+			
+		}
+
+		function calcAverage(tips){
+			var sum=0;
+			for(var i=0;i<tips.length;i++){
+				sum=sum+tips[i];
+			}
+			return sum/tips.length;
+		}
+
+		Prk.average = calcAverage(Prk.tips);
+		document.write("Average tips is:"+Prk.average);
+
+	</script>
+	
+</head>
+<body>
+	<h1> Hello world - 2.0-123245</h1>	
+</body>
+</html>
